@@ -1,31 +1,23 @@
-import React from 'react'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import React from "react";
+
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <Form>
+    <div className="auth">
       <h1>Login</h1>
-    <Form.Group className="mb-3" controlId="formBasicEmail">
-      <Form.Label>Email address</Form.Label>
-      <Form.Control type="email" placeholder="Enter email" />
-      <Form.Text className="text-muted">
-      </Form.Text>
-    </Form.Group>
 
-    <Form.Group className="mb-3" controlId="formBasicPassword">
-      <Form.Label>Password</Form.Label>
-      <Form.Control type="password" placeholder="Password" />
-    </Form.Group>
-    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-      <Form.Check type="checkbox" label="Check me out" />
-    </Form.Group>
-    <Button variant="primary" type="submit">
-      Submit
-    </Button>
-  </Form>
-);
-  
-}
+      <form>
+        <input required type="text" placeholder="username" />
+        <input required type="password" placeholder="password" />
+        <button>Login</button>
+        <p>This is an error!</p>
+        <span>
+          Dont't you have account? <Link to="/register">Register</Link>
+        </span>
+      </form>
+    </div>
+  );
+};
 
-export default Login
+export default Login;
