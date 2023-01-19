@@ -5,7 +5,7 @@ const Footer = () => {
    <footer>
     <img src={Logo} alt="" />
     <span>
-      Made With <b> React.js</b>
+      Powered By <b> CUBICUS Soft</b>
     </span>
    </footer>
   )
