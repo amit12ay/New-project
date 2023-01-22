@@ -11,6 +11,7 @@ const Register = () => {
     email:"",
     password:"",
   })
+  const [err,setError] = useState(null)
 
   const handleChange = e =>{
 
@@ -19,10 +20,10 @@ const Register = () => {
 const handleSubmit = async e => {
   e.preventDefault()
   try{
-  const res = await axios.post("http://localhost:8800/api/", inputs)
+  const res = await axios.post("/auth/register", inputs)
   console.log(res)
   }catch(err){
-    console.log(err)
+    setError(err.response.data);
   }
 }
 
@@ -36,7 +37,7 @@ const handleSubmit = async e => {
 
         <input required type="password" placeholder='password' name='password' onChange={handleChange} />
         <button onClick={handleSubmit}>Register</button>
-        <p>This is an error!</p>
+       {err && <p>{err}</p>}
         <span>
           Do you have account? <Link to="/login">Login</Link>
         </span>
