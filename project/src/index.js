@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 // import RouterComponent from './route/routes';
 import App from './App';
+import { AuthContexProvider } from './context/authContext';
 
 
 
@@ -14,7 +15,10 @@ root.render(
   // </React.StrictMode>
 
   <React.StrictMode>
+    <AuthContexProvider>
   <App />
+  </AuthContexProvider>
+
 </React.StrictMode>
 );
 
