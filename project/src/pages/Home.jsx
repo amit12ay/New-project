@@ -9,7 +9,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-       .....
+       
     }
   })
   
