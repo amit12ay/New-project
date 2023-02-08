@@ -1,3 +1,5 @@
+ import { db } from "../db.js";
+ 
 export  const getPosts = (req, res) =>{
   const q = req.query.cat
   ? "SELECT * FROM posts WHERE cat=?"
@@ -9,6 +11,7 @@ export  const getPosts = (req, res) =>{
     return res.status(200).json(data); 
   })
 }
+
 export  const getPost = (req, res) =>{
     res.json("from controller")
 }
@@ -19,5 +22,5 @@ export  const deletePost = (req, res) =>{
     res.json("from controller")
 }
 export  const updatePost = (req, res) =>{
-    res.json("from controller")...
+    res.json("from controller")
 } 
