@@ -1,10 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Edit from "../img/edit.png";
 import Delete from "../img/delete.png";
 import Menu from "../component/Menu";
 
 const Single = () => {
+  const [post, setPost] = useState ({});
+
+  const location = useLocation().search
+
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+      try{
+            const res = await axios.get(`/posts/`);
+            setPost(res.data);
+      }catch(err){
+        console.log(err)
+      }
+       
+    };
+    fetchData();
+  }, []);
+  
   return (
     <div className="single">
       <div className="content">
